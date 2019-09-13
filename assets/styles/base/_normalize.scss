@@ -1,0 +1,83 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    float: left;
+    width: 100%;
+    color: #111;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: #222;
+    outline: none;
+}
+
+a:focus,
+a,
+a:hover,
+button {
+    outline: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+    font-size: 14px;
+    color: #222;
+    line-height: 24px;
+    margin: 0 0 15px 0px;
+    padding: 0px;
+    letter-spacing: .3px;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    outline: 0;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.container{
+    width: 1110px;
+    margin: 0 auto;
+}

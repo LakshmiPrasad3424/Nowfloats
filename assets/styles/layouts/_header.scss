@@ -1,0 +1,174 @@
+header {
+    height: 65px;
+    background: #fff;
+    position: relative;
+
+    .container {
+        @include flexbox();
+        height: inherit;
+
+        nav {
+            flex: 1;
+            @include flexbox();
+            align-items: center;
+
+            ul {
+                @include flexbox();
+
+                li {
+                    &:not(:last-child) {
+                        a {
+                            margin-right: 30px;
+                        }
+                    }
+
+                    a {
+                        font-size: 15px;
+                        transition: all .2s ease-in-out;
+                        font-weight: 500;
+
+                        &:hover {
+                            color: #88d8d7;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-details {
+            width: 200px;
+            margin-right: 280px;
+            @include flexbox();
+            align-items: center;
+
+            .contact-inner {
+                height: 36px;
+                border: 1px solid #222;
+                border-radius: 50px;
+                @include flexbox();
+                align-items: center;
+                padding: 0 15px;
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+
+
+                i {
+                    font-size: 18px;
+                    margin-right: 6px;
+                    transition: all .2s ease-in-out;
+                }
+
+                span {
+                    font-size: 15px;
+                    font-weight: 500;
+                    transition: all .2s ease-in-out;
+                }
+
+                &:hover {
+                    border-color: #88d8d7;
+
+
+                    i {
+                        color: #88d8d7;
+                    }
+
+                    span {
+                        color: #88d8d7;
+                    }
+                }
+
+            }
+        }
+
+        .search-sec {
+            width: 300px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include flexbox();
+            height: inherit;
+            align-items: center;
+
+            .search-main {
+                border: 1px solid;
+                position: absolute;
+                right: 0px;
+                border-right: 0;
+                height: 36px;
+                padding: 0px 12px 0px 10px;
+                @include flexbox();
+                align-items: center;
+                align-items: center;
+                border-radius: 50px 0 0 50px;
+                cursor: pointer;
+                transition: all .2s;
+
+                i {
+                    font-size: 18px;
+                    transition: all .2s;
+                    width: 10%;
+                }
+
+                input {
+                    height: inherit;
+                    border: 0;
+                    width: calc(100% - 10%);
+                    background: transparent;
+                    padding-left: 10px;
+                    font-size: 15px;
+                    display: none;
+                }
+
+                button {
+                    position: absolute;
+                    right: -25px;
+                    border: 0;
+                    background: 0;
+                    padding: 0;
+                    width: 25px;
+                    height: 25px;
+                    line-height: 1;
+                    display: none;
+
+                    i{
+                        font-size: 30px;
+                    }
+                }
+
+                &:hover {
+                    border-color: #88d8d7;
+                    padding: 0px 15px 0px 15px;
+
+                    i {
+                        color: #88d8d7;
+                    }
+                }
+
+                &.active {
+                    transition: all .2s ease-in;
+                    width: 240px;
+                    border: 1px solid;
+                    border-radius: 50px;
+
+                    &:hover {
+                        padding: 0px 12px 0px 10px;
+
+                        i {
+                            color: #222;
+                        }
+                    }
+
+                    input {
+                        display: block;
+                    }
+
+                    button{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+
+}
