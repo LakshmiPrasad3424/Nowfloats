@@ -10,6 +10,7 @@
         .banner-content {
             width: 50%;
             color: #fff;
+            padding-top: 80px;
 
             #dynamicContent {
                 min-height: 180px;
@@ -38,12 +39,17 @@
                     &::first-letter {
                         text-transform: capitalize;
                     }
+
+                    span {
+                        display: none;
+                    }
                 }
 
                 a {
                     color: #fff;
                     text-decoration: underline;
                     transition: all .2s;
+                    font-size: 15px;
 
                     &:hover {
                         color: #88d8d7;
@@ -72,6 +78,434 @@
             }
 
         }
+
+        .time-slot {
+            width: 50%;
+            margin-left: 80px;
+
+            .timeslot-inner {
+                width: 100%;
+                margin: 0 auto;
+                background: #fff;
+                max-width: 440px;
+                border-radius: 0px 0px 8px 8px;
+
+                .timeslot-header {
+                    @include flexbox();
+                    align-items: center;
+                    justify-content: center;
+
+                    h4 {
+                        width: 50%;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #e1e1e1;
+                        cursor: pointer;
+                        text-align: center;
+                        padding: 15px 0;
+                        border-bottom: 2px solid #f5f5f5;
+                        transition: all .2s;
+
+
+                        &:first-child {
+                            border-right: 2px solid #f5f5f5;
+                        }
+
+                        &.active {
+                            color: #88d8d7;
+                            border-bottom-color: #88d8d7;
+                        }
+
+                        &:hover {
+                            color: #88d8d7;
+                        }
+                    }
+                }
+
+                .timeslot-body {
+                    padding: 20px;
+
+                    .tab-content {
+                        display: none;
+
+                        &.active {
+                            display: block;
+                        }
+                    }
+
+                    .appointment {
+                        .select {
+                            width: 100%;
+                            position: relative;
+                            border: 1px solid #88d8d7;
+                            @include border-radius(6px);
+
+                            .purpose-main {
+                                @include flexbox();
+                                height: 53px;
+                                align-items: center;
+                                justify-content: space-between;
+                                border-radius: 6px 0 0 6px;
+                                cursor: pointer;
+                                transition: all .2s;
+
+                                input {
+                                    width: 90%;
+                                    height: inherit;
+                                    border: 0;
+                                    font-size: 15px;
+                                    padding-left: 15px;
+                                    border-radius: 6px 0 0 6px;
+                                    cursor: pointer;
+                                    letter-spacing: 0.4px;
+                                }
+
+                                i {
+                                    width: 10%;
+                                    display: inline-block;
+                                    text-align: center;
+                                    color: #88d8d7;
+                                }
+
+                                &.active {
+                                    i {
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+
+                            >span {
+                                position: absolute;
+                                font-size: 12px;
+                                letter-spacing: 0.2px;
+                                color: #88d8d7;
+                                display: block;
+                                width: 60px;
+                                top: -9px;
+                                background: #fff;
+                                padding: 0 4px;
+                                left: 15px;
+                            }
+
+                            ul {
+                                cursor: pointer;
+                                position: absolute;
+                                width: 100%;
+                                background: #fff;
+                                top: 104%;
+                                left: 0;
+                                box-shadow: 0 0 4px rgba(42, 42, 42, .3);
+                                padding: 20px 20px 10px;
+                                z-index: 2;
+                                display: none;
+
+                                &.active {
+                                    padding: 15px;
+                                }
+
+                                li {
+                                    font-size: 15px;
+                                    letter-spacing: 0.3px;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+
+                        .time-select {
+                            margin: 20px 0;
+                            border: 1px solid #f5f5f5;
+                            @include border-radius(6px);
+
+                            .datepicker {
+                                width: 100%;
+                                @include flexbox();
+                                height: 44px;
+                                border-bottom: 1px solid #f5f5f5;
+                                border-radius: 6px 6px 0 0;
+
+                                i {
+                                    width: 10%;
+                                    @include flexbox();
+                                    align-items: center;
+                                    justify-content: center;
+                                    cursor: pointer;
+                                    transition: all .2s;
+
+                                    &.fa-caret-left {
+                                        border-right: 1px solid #f5f5f5;
+                                    }
+
+                                    &.fa-caret-right {
+                                        border-left: 1px solid #f5f5f5;
+                                    }
+
+                                    &:hover {
+                                        color: #88d8d7;
+                                    }
+                                }
+
+                                >input {
+                                    width: 80%;
+                                    border: 0;
+                                    padding: 0 15px;
+                                    cursor: pointer;
+                                    text-align: center;
+                                    font-size: 15px;
+                                }
+                            }
+
+
+
+                            .timing {
+                                @include flexbox();
+
+                                .icon-sec {
+                                    width: 25%;
+                                    cursor: pointer;
+                                    padding: 30px 0;
+                                    text-align: center;
+                                    border-right: 1px solid #f5f5f5;
+                                    border-bottom: 1px solid #f5f5f5;
+                                    opacity: 0.5;
+
+                                    img {
+                                        width: 40px;
+                                        height: 40px;
+                                        display: block;
+                                        margin: 0 auto;
+                                    }
+
+                                    span {
+                                        font-size: 11px;
+                                        font-weight: 500;
+                                    }
+
+
+                                }
+
+                                ul {
+                                    width: 75%;
+                                    @include flexbox();
+                                    flex-wrap: wrap;
+
+                                    li {
+                                        width: 33.33%;
+                                        border-right: 1px solid #f5f5f5;
+                                        border-bottom: 1px solid #f5f5f5;
+                                        @include flexbox();
+                                        align-items: center;
+                                        justify-content: center;
+                                        cursor: not-allowed;
+
+                                        span {
+                                            font-size: 13px;
+                                            color: #222;
+                                            opacity: 0.2;
+                                            text-decoration: line-through;
+                                            font-weight: 500;
+
+                                        }
+
+                                        &.active,
+                                        &.break {
+                                            span {
+                                                opacity: 1;
+                                                text-decoration: none;
+                                            }
+                                        }
+
+                                        &.break {
+                                            cursor: default;
+                                        }
+
+                                        &.active {
+                                            position: relative;
+                                            transition: all .2s;
+                                            cursor: pointer;
+
+                                            .tooltiptext {
+                                                visibility: hidden;
+                                                width: 150px;
+                                                background-color: #fff;
+                                                color: #222;
+                                                text-align: center;
+                                                border-radius: 6px;
+                                                padding: 10px 0;
+                                                position: absolute;
+                                                z-index: 1;
+                                                bottom: 125%;
+                                                left: 50%;
+                                                margin-left: -75px;
+                                                opacity: 0;
+                                                transition: opacity 0.3s;
+                                                font-size: 13px;
+                                                box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+                                                font-weight: 500;
+
+
+                                                .tooltip-arrow {
+                                                    display: block;
+                                                    width: 20px;
+                                                    height: 10px;
+                                                    position: absolute;
+                                                    top: 100%;
+                                                    left: 50%;
+                                                    transform: translateX(-50%);
+                                                    overflow: hidden;
+
+                                                    &::after {
+                                                        content: "";
+                                                        display: inline-block;
+                                                        position: absolute;
+                                                        width: 10px;
+                                                        height: 10px;
+                                                        background: white;
+                                                        transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                                                        top: 0;
+                                                        left: 50%;
+                                                        box-shadow: 1px 1px 20px 0px rgba(0, 0, 0, 0.6);
+                                                    }
+                                                }
+                                            }
+
+                                            &:hover .tooltiptext {
+                                                visibility: visible;
+                                                opacity: 1;
+                                            }
+
+                                            &:hover {
+                                                background: #88d8d7;
+
+                                                span {
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+
+                                        &:nth-child(3n) {
+                                            border-right: 0;
+                                        }
+                                    }
+                                }
+
+                                &:hover {
+                                    .icon-sec {
+                                        opacity: 1;
+                                    }
+                                }
+
+                                &:last-child {
+                                    .icon-sec {
+                                        border-bottom: 0;
+                                    }
+                                }
+
+                                &:last-child {
+                                    li:nth-last-child(-n+3) {
+                                        border-bottom: 0;
+                                    }
+                                }
+                            }
+
+                        }
+
+                        button {
+                            width: 100%;
+                            @include border-radius(4px);
+                            background: #88d8d7;
+                            color: #fff;
+                            height: 50px;
+                            @include flexbox();
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: #fff;
+                            text-transform: uppercase;
+                            border-color: #88d8d7;
+                            letter-spacing: 0.4px;
+                            transition: all .2s;
+
+                            &:hover {
+                                background: transparent;
+                                color: #88d8d7;
+                            }
+                        }
+                    }
+
+                    .enquiry {
+                        ul {
+                            li {
+                                input {
+                                    width: 100%;
+                                    height: 42px;
+                                    border: 1px solid #ddd;
+                                    @include border-radius(3px);
+                                    margin-bottom: 18px;
+                                    padding-left: 15px;
+                                    font-size: 15px;
+                                }
+
+                                textarea {
+                                    width: 100%;
+                                    height: 120px;
+                                    border: 1px solid #ddd;
+                                    @include border-radius(3px);
+                                    margin-bottom: 18px;
+                                    padding: 20px 0 0 15px;
+                                    font-size: 15px;
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 100%;
+                            @include border-radius(4px);
+                            background: #88d8d7;
+                            color: #fff;
+                            height: 50px;
+                            @include flexbox();
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 15px;
+                            font-weight: 500;
+                            color: #fff;
+                            text-transform: uppercase;
+                            border-color: #88d8d7;
+                            letter-spacing: 0.4px;
+                            transition: all .2s;
+
+                            &:hover {
+                                background: transparent;
+                                color: #88d8d7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
+}
+
+@media only screen and (max-width:1023px) {
+    .banner {
+        .container {
+            flex-wrap: wrap;
+
+            .banner-content {
+                width: 100%;
+                padding: 0px 0 60px;
+
+                #dynamicContent h1 {
+                    font-size: 40px;
+                }
+            }
+
+            .time-slot {
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+    }
 }

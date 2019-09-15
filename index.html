@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -18,8 +21,13 @@
         <header>
             <div class="container">
                 <nav>
+                    <div class="menu" onclick="menuClick(this)">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Services</a></li>
                         <li><a href="#">Updates</a></li>
@@ -49,14 +57,144 @@
             <div class="container">
                 <div class="banner-content">
                     <div id="dynamicContent">
-                       <!-- <h1><span>welcome to</span> dixit healing chamber</h1>
+                        <h1><span>welcome to</span> dixit healing chamber</h1>
                         <p>Homeopathic clinic of Dr.Shravan Dixit is located in Jubile Hills,Hyderabad.The clinic od
                             established in 2006 and is one of the most reputed clinic in the vicinty.Guided by a clear
-                            vision... <a href="#">SEE MORE</a></p> -->
+                            vision...
+        
+                            <a href="#">SEE MORE</a>
+                        </p>
                     </div>
                     <a href="#">meet the doctor</a>
                 </div>
-                <div class="time-slot"></div>
+                <div class="time-slot">
+                    <div class="timeslot-inner">
+                        <div class="timeslot-header tabs">
+                            <h4 class="active tab-link" data-tab="1">Book Appointment</h4>
+                            <h4 class="tab-link" data-tab="2">Have an enquiry?</h4>
+                        </div>
+                        <div class="timeslot-body">
+                            <div id="tab-1" class="tab-content appointment active">
+                                <form>
+                                    <div class="select">
+                                        <span class="purpose">purpose</span>
+                                        <div class="purpose-main" onclick="purposeDrop(this)">
+                                            <input type="text" value="Consultation">
+                                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                        </div>
+
+                                        <ul id="consult">
+                                            <li><span>Consultation</span></li>
+                                            <li><span>Visit</span></li>
+                                            <li><span>Checkup</span></li>
+                                            <li><span>ReVisit</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="time-select">
+                                        <div class="datepicker">
+                                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                                            <input type="text" id="datepicker" value="Today (Sun, 15 Sep)"></p>
+                                            <i class="fa fa-caret-right" aria-hidden="true"></i>
+                                        </div>
+
+                                        <div class="timing">
+                                            <div class="icon-sec">
+                                                <img src="images/sunset.png" alt="">
+                                                <span>MORNING</span>
+                                            </div>
+                                            <ul>
+                                                <li class="active">
+                                                    <span>10.00 AM</span>
+                                                    <b class="tooltiptext">Slot is available<i
+                                                            class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="active"><span>10.30 AM</span>
+                                                    <b class="tooltiptext">Slot is available<i
+                                                            class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li><span>11.00 AM</span></li>
+                                                <li><span>11.30 AM</span></li>
+                                                <li><span>12.00 PM</span></li>
+                                                <li class="break"><span>-</span></li>
+                                                <li class="active"><span>1.00 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li><span>1.30 PM</span></li>
+                                                <li><span>2.00 PM</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="timing">
+                                            <div class="icon-sec">
+                                                <img src="images/sunset.png" alt="">
+                                                <span>EVENING</span>
+                                            </div>
+                                            <ul>
+                                                <li class="active"><span>2.30 PM</span> <b class="tooltiptext">Slot is
+                                                        available
+                                                        <i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="break"><span>-</span></li>
+                                                <li class="break"><span>-</span></li>
+                                                <li><span>4.00 PM</span></li>
+                                                <li><span>4.30 PM</span></li>
+                                                <li class="active"><span>5.00 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li><span>5.30 PM</span></li>
+                                                <li class="active"><span>6.00 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="active"><span>6.30 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="timing">
+                                            <div class="icon-sec">
+                                                <img src="images/night.png" alt="">
+                                                <span>NIGHT</span>
+                                            </div>
+                                            <ul>
+                                                <li><span>7.00 PM</span></li>
+                                                <li><span>7.30 PM</span></li>
+                                                <li class="break"><span>-</span></li>
+                                                <li class="active"><span>8.30 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="active"><span>9.00 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="active"><span>10.00 PM</span> <b class="tooltiptext">Slot is
+                                                        available<i class="tooltip-arrow"></i></b>
+                                                </li>
+                                                <li class="break"><span>-</span></li>
+                                                <li class="break"><span>-</span></li>
+                                                <li class="break"><span>-</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit">Continue</button>
+                                </form>
+                            </div>
+                            <div id="tab-2" class="enquiry tab-content">
+                                <form>
+                                    <ul>
+                                        <li><input type="text" placeholder="Name*" required></li>
+                                        <li><input type="text" placeholder="Mobile No*" required></li>
+                                        <li><input type="text" placeholder="Email*" required></li>
+                                        <li><textarea placeholder="Message*" required></textarea></li>
+                                    </ul>
+
+                                    <button type="submit">Submit</button>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </section>
     </main>
